@@ -2,10 +2,9 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-# Create your models here.
-
 
 class Sprint(models.Model):
+
     """Período de iteração do desenvolvimento"""
 
     name = models.CharField(max_length=100, blank=True, default='')
@@ -16,7 +15,7 @@ class Sprint(models.Model):
         return self.name or _('Sprint ending %s') % self.end
 
 
-class TaskModel(models.Model):
+class Task(models.Model):
     """Unidade referente ao trabalho a ser realizado na sprint"""
 
     STATUS_TODO = 1
